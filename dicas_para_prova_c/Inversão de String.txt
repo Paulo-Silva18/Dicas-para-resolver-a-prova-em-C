@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100], inverted[100];
+    int length;
+
+    // Leitura da string
+    printf("Digite uma string: ");
+    scanf("%s", str);
+
+    // Calcula o comprimento da string
+    length = strlen(str);
+
+    // Invertemos a string
+    for (int i = 0; i < length; i++) {
+        inverted[i] = str[length - 1 - i];
+    }
+    inverted[length] = '\0'; // Adiciona o caractere de terminação
+
+    // Exibe a string invertida
+    printf("String invertida: %s\n", inverted);
+
+    return 0;
+}

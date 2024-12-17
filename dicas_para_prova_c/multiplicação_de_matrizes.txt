@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main() {
+    int A[3][3], C[3][3]; // Declaração das matrizes
+
+    // Leitura da matriz A
+    printf("Digite os elementos da matriz A (3x3):\n");
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            scanf("%d", &A[i][j]);
+        }
+    }
+
+    // Inicialização da matriz C com zeros
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            C[i][j] = 0;
+        }
+    }
+
+    // Cálculo de C = A * A
+    for (int i = 0; i < 3; i++) {        // Itera sobre as linhas de C
+        for (int j = 0; j < 3; j++) {    // Itera sobre as colunas de C
+            for (int k = 0; k < 3; k++) { // Soma os produtos
+                C[i][j] += A[i][k] * A[k][j];
+            }
+        }
+    }
+
+    // Impressão da matriz C
+    printf("Resultado da matriz C (A^2):\n");
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%d ", C[i][j]); // Exibe os elementos da linha
+        }
+        printf("\n"); // Quebra a linha para a próxima linha da matriz
+    }
+
+    return 0;
+}
